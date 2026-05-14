@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brownie Specialties</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fff8e7;
+      color: #5a3e2b;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    p {
+      max-width: 500px;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+    img {
+      max-width: 400px;
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      margin-bottom: 20px;
+    }
+    button {
+      background-color: #5a3e2b;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background-color: #3e291c;
+    }
+  </style>
+</head>
+<body>
+  <h1>Delicious Cupcake</h1>
+  <p>Our Cupcakes are rich, fudgy, and baked to perfection. Made with premium cocoa and a touch of love, they melt in your mouth with every bite.</p>
+  <img src="../assets/images/bscup.jpg" alt="Butterscotch Cupcake">
+  <button onclick="orderNow()">Order Now</button>
+
+  <script>
+    function orderNow() {
+      // Replace the URL below with your actual Google Form link
+      window.open("https://docs.google.com/forms/d/e/1FAIpQLSdKrOZRScZ6bnbe1veQj0uJXXzAq0ytL1GnBMc2cRCnY0F-nw/viewform?embedded=true", "_blank");
+    }
+  </script>
+</body>
+</html>
