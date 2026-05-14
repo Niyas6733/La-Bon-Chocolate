@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Bon Chocolate</title>
+    <link rel="icon" type="image/png" href="assets/images/lbclogo.jpg">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #4b2e2e;
+            color: white;
+            text-align: center;
+        }
+        
+        header {
+            padding: 20px;
+        }
+        
+        header img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin: 10px 0 5px;
+        }
+        
+        p.tagline {
+            color: #d1c7c7;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .menu {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        
+        .card {
+            background-color: #5c3a3a;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .card:hover {
+            transform: scale(1.05);
+        }
+        
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .card h2 {
+            margin: 10px 0 15px;
+            font-size: 1.3rem;
+        }
+        
+        .products {
+            display: none;
+            margin-top: 20px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .products.active {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .product-card {
+            background-color: #5c3a3a;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+        }
+        
+        a {
+            color: wheat;
+            text-decoration: none;
+        }
+        
+        .product-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        
+        footer {
+            margin: 30px 0;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            /* Increased gap between icons */
+            margin: 15px 0;
+        }
+        
+        .social-icons a img {
+            display: block;
+            width: 50px;
+            height: 50px;
+        }
+        
+        .social-icons a:hover {
+            background-color: #5a3d3d;
+        }
+        
+        .contact-info {
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+        
+        footer img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        /* About / Portfolio Section */
+        
+        .about {
+            background-color: #3d2b2b;
+            padding: 40px 20px;
+            margin-top: 40px;
+        }
+        
+        .about-container {
+            max-width: 1000px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .about-image img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        }
+        
+        .about-text {
+            flex: 1;
+            text-align: left;
+        }
+        
+        .about-text h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+        
+        .about-text p {
+            font-size: 1.1rem;
+            color: #d1c7c7;
+            line-height: 1.6;
+        }
+        /* Make it stack on smaller screens */
+        
+        @media (max-width: 768px) {
+            .about-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .about-text {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="assets/images/labonchoclatelogo.jpg" alt="La Bon Chocolate Logo">
+        <h1>La Bon Chocolate</h1>
+        <p class="tagline">Where every bite is pure bliss</p>
+    </header>
+
+    <!-- Category Menu -->
+    <section class="menu">
+        <div class="card" onclick="showCategory('brownie')">
+            <img src="assets/images/brownie.jpg" alt="Brownies">
+            <h2>Brownies</h2>
+        </div>
+        <div class="card" onclick="showCategory('cake')">
+            <img src="assets/images/cake.jpg" alt="Cakes">
+            <h2>Cakes</h2>
+        </div>
+        <div class="card" onclick="showCategory('cookie')">
+            <img src="assets/images/cookie.jpg" alt="Cookies">
+            <h2>Cookies</h2>
+        </div>
+        <div class="card" onclick="showCategory('cupcake')">
+            <img src="assets/images/cupcake.jpg" alt="Cupcakes">
+            <h2>Cupcakes</h2>
+        </div>
+    </section>
+
+    <!-- Product Section -->
+    <section id="brownie" class="products">
+        <div class="product-card">
+            <a href="pages/brownie1.html">
+                <img src="assets/images/nutella.jpg" alt="Nutella Brownie">
+                <h3>Nutella Brownie</h3>
+            </a>
+        </div>
+        <div class="product-card">
+            <a href="pages/lotusbiscoff.html">
+                <img src="assets/images/biscoff.jpg" alt="Lotus Biscoff Brownie">
+                <h3>Lotus Biscoff Brownie</h3>
+            </a>
+        </div>
+        <div class="product-card">
+            <a href="pages/triplechocolatebrownie.html">
+                <img src="assets/images/triple.jpg" alt="Triple Chocolate Brownie">
+                <h3>Triple Chocolate Brownie</h3>
+            </a>
+        </div>
+        <div class="product-card">
+            <a href="pages/doublechocolatebrownie.html">
+                <img src="assets/images/double.jpg" alt="Double Chocolate Brownie">
+                <h3>Double Chocolate Brownie</h3>
+            </a>
+        </div>
+    </section>
+
+    <section id="cake" class="products">
+        <div class="product-card">
+            <a href="pages/chocolate truffle cake.html">
+                <img src="assets/images/chcake.jpg" alt="Chocolate Truffle Cake">
+                <h3>Chocolate Truffle Cake</h3>
+            </a>
+        </div>
+        <div class="product-card">
+            <a href="pages/blackforestcake.html">
+                <img src="assets/images/blkforest.jpg" alt="Black Forest Cake">
+                <h3>Black Forest Cake</h3>
+            </a>
+        </div>
+        <div class="product-card">
+            <a href="pages/butterscotchcake,html.html">
+                <img src="assets/images/btrscth.jpg" alt="Butter Scotch Cake">
+                <h3>Butter Scotch Cake</h3>
+            </a>
+        </div>
+        <div class="product-card">
+            <a href="pages/redvelvet.html">
+                <img src="assets/images/red.jpg" alt="Red Velvet Cake">
+                <h3>Red Velvet Cake</h3>
+            </a>
+        </div>
+        <!-- Customised Cake as a link -->
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd0arDnUK9Rnkd9EjvRfUlLR1K3hQzrBZ0kDxwJ1RGZgFOiAw/viewform?embedded=true" target="_blank" class="product-card" style="text-decoration: none; color: white;">
+            <img src="assets/images/cuscake.jpg" alt="Customised Cake">
+            <h3>Customised Cake</h3>
+        </a>
+    </section>
+
+    <section id="cookie" class="products">
+        <div class="product-card">
+            <a href="pages/Chocochip cookie.html">
+                <img src="assets/images/chocochip.jpg" alt="Choco chip Cookie">
+                <h3>Choco chip Cookie</h3>
+            </a>
+        </div>
+        <div class="product-card">
+            <a href="pages/doublechcookie.html">
+                <img src="assets/images/dcookie.jpg" alt="Double Chocolate Cookie">
+                <h3>Double Chocolate Cookie</h3>
+            </a>
+        </div>
+    </section>
+
+    <section id="cupcake" class="products">
+        <div class="product-card">
+            <a href="pages/chtrucupcake.html">
+                <img src="assets/images/chcupcake.jpg" alt="Chocolate Truffle Cupcake">
+                <h3>Chocolate Truffle Cupcake</h3>
+            </a>
+        </div>
+        <div class="product-card">
+            <a href="pages/blkfrstcupcake.html">
+                <img src="assets/images/bkcupcake.jpg" alt="Black Forest Cupcake">
+                <h3>Black Forest Cupcake</h3>
+            </a>
+        </div>
+        <div class="product-card">
+            <a href="pages/butterscotchcupcake.html">
+                <img src="assets/images/bscup.jpg" alt="Butter Scotch Cupcake">
+                <h3>Butter Scotch Cupcake</h3>
+            </a>
+        </div>
+        <div class="product-card">
+            <a href="pages/redvelvetcupcake.html">
+                <img src="assets/images/rvcupcake.jpg" alt="Red Velvet Cupcake">
+                <h3>Red Velvet Cupcake</h3>
+            </a>
+        </div>
+        <!-- Customised Cupcake as a link -->
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd9sjtjrMMM7sXzvFoUsQR982SQ1Mq4L13ldB8tu4sIDd2yYQ/viewform?embedded=true" target="_blank" class="product-card" style="text-decoration: none; color: white;">
+            <img src="assets/images/cuscupcake.jpg" alt="Customised Cupcake">
+            <h3>Customised Cupcake</h3>
+        </a>
+    </section>
+    <!-- Product Sections -->
+    <!-- Portfolio / About Section -->
+    <section class="about">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="assets/images/canvas.owner.png">
+            </div>
+            <div class="about-text">
+                <h2>About La Bon Chocolate</h2>
+                <p>
+                    Welcome to La Bon Chocolate! We believe that every bite should be a moment of happiness. Our brownies, cakes, cookies, and cupcakes are crafted with love and premium ingredients to give you the perfect balance of taste and texture. Whether it's a celebration
+                    or a sweet craving, we have something special for everyone.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <img src="assets/images/lbclogo.jpg" alt="La Bon Chocolate Logo">
+        <h2>La Bon Chocolate</h2>
+        <p>Where Every Bite is Pure Bliss</p>
+
+        <div class="social-icons">
+            <a href="https://www.instagram.com/labonchocolate?igsh=MW44MjdlZnBlcm9ncg=="><img src="assets/images/insta.png" alt="Instagram" width="20"></a>
+        </div>
+
+        <div class="contact-info">
+            <p>📞 Call: +91 90800 23828</p>
+            <p>📩 Email: labonchocolateofficial@gmail.com</p>
+        </div>
+    </footer>
+    <script>
+        function showCategory(category) {
+            document.querySelectorAll('.products').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(category).classList.add('active');
+            window.scrollTo({
+                top: document.getElementById(category).offsetTop,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+
+</html>
